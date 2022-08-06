@@ -51,7 +51,8 @@ body {
 }
 
 .adviceId,
-.adviceText {
+.adviceText > q 
+{
   color: #3a8fff;
 }
 
