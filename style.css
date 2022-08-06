@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(231, 227, 227);
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #440cc9;
+}
+
+.mainParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.advice-place {
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loading,
+.advice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.loading {
+  /* display: none; */
+  visibility: hidden;
+}
+
+.advice {
+  background-color: rgb(9, 45, 143);
+  text-align: center;
+}
+
+.adviceId,
+.adviceText {
+  color: #3a8fff;
+}
+
+.adviceId {
+  margin: 10px;
+}
+
+.adviceText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* @media (max-height: 800px) {
+  .adviceText {
+    margin-top: 8vh;
+  }
+} */
+
+.mainParent .advice-place .visible {
+  z-index: 10;
+  visibility: visible;
+}
+
+.l1,
+.l2,
+.l3,
+.l4 {
+  position: absolute;
+  border-radius: 50px;
+  border: 2px solid rgb(32, 25, 53);
+  animation: animate 2s ease-in-out infinite alternate;
+}
+
+.l1,
+.l3 {
+  animation: animate 2s ease-in-out infinite alternate;
+}
+
+.l2,
+.l4 {
+  animation: animate 2s ease-in-out 2s infinite alternate;
+}
+
+.l1,
+.l2 {
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+}
+
+.l3,
+.l4 {
+  width: 40px;
+  height: 40px;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+
+button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-color: rgb(9, 45, 143);
+  color: #3a8fff;
+  font-weight: 600;
+  box-shadow: 1px 1px 15px lavenderblush;
+  z-index: 100;
+  position: absolute;
+  left: calc(50% -50px);
+  top: calc(50% -50px);
+}
+
+hr {
+  margin-inline: 20%;
+  position: relative;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.error-text {
+  transform: scale(1.5);
+  margin-bottom: 10px;
+  animation: error 1s ease-in-out 1;
+}
+
+@media (max-width: 920px) {
+  .advice-place {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .advice-place {
+    width: 80vw;
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(3.5);
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
